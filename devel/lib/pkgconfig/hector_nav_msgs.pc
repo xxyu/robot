@@ -1,0 +1,8 @@
+prefix=/home/xxx/catkin_ws_robots/devel
+
+Name: hector_nav_msgs
+Description: Description of hector_nav_msgs
+Version: 0.3.5
+Cflags: -I/home/xxx/catkin_ws_robots/devel/include
+Libs: -L/home/xxx/catkin_ws_robots/devel/lib 
+Requires: nav_msgs geometry_msgs message_runtime

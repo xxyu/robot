@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+    <group ns="robot3">
+		<arg name="robot_node_3" default="true" />
+        
+		<node pkg="robot_controller" type="robot" name="robot_node_3" if="$(arg robot_node_3)" output="screen">
+			<param name ="trajectory_file" value = "$(find robot_controller)/launch/Orbital_ECI.txt"/>
+			<param name ="robot_name" value = "robot3"/>
+            <param name ="kd" value = "-0.2"/>
+            <param name ="kp" value = "-0.5"/>
+            <param name ="ku" value = "-0.001"/>
+            <param name ="angular_speed_max" value = "0.13"/>
+            <param name ="xy_speed_constraint" value = "0.13"/>
+		</node>
+	</group>
+</launch>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+	<group ns="robot5">
+		<node pkg="tf" type="static_transform_publisher" name="ground_2_map" args="0 0 -0.5 0 0 0 ground robot5/map 100"/>   
+		<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0 0 0 3.142 0 0 robot5/base_link robot5/laser 100"/>
+		<include file="$(find robot_controller)/launch/default_mapping_robot5.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot5.launch"/>  
+	</group>
+    
+    <group ns="robot7">
+		<!-- <node pkg="tf" type="static_transform_publisher" name="ground_2_map" args="0 0 -0.5 0 0 0 ground robot7/map 100"/> comment off 2016-10-12, WT-->
+		<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0 0 0 3.142 0 0 robot7/base_link robot7/laser 100"/>
+		<include file="$(find robot_controller)/launch/default_mapping_robot7.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot7.launch"/>  
+	</group>
+    
+    <group ns="robot4">
+		<!-- <node pkg="tf" type="static_transform_publisher" name="ground_2_map" args="0 0 -0.5 0 0 0 ground robot4/map 100"/> comment off 20161016, WT -->  
+		<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0 0 0 3.142 0 0 robot4/base_link robot4/laser 100"/>
+		<include file="$(find robot_controller)/launch/default_mapping_robot4.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot4.launch"/>  
+	</group>
+    
+    <group ns="robot3">
+		<!-- <node pkg="tf" type="static_transform_publisher" name="ground_2_map" args="0 0 -0.5 0 0 0 ground robot3/map 100"/>  comment off 20161017, WT -->  
+		<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0 0 0 3.142 0 0 robot3/base_link robot3/laser 100"/>
+		<include file="$(find robot_controller)/launch/default_mapping_robot3.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot3.launch"/>  
+	</group>
+</launch>

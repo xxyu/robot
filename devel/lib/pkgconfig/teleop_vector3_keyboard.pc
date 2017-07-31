@@ -1,0 +1,8 @@
+prefix=/home/xxx/catkin_ws_robots/devel
+
+Name: teleop_vector3_keyboard
+Description: Description of teleop_vector3_keyboard
+Version: 0.5.0
+Cflags: 
+Libs: -L/home/xxx/catkin_ws_robots/devel/lib 
+Requires: 

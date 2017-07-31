@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="ground_2_map_7" args="0 0 -0.5 0 0 0 ground robot7/map 200"/>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="map_2_odom_7" args="0 0 0 0 0 0 robot7/map robot7/odom 200"/> -->
+    <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_7" args="0 0 0 3.142 0 0 robot7/base_link robot7/laser 200"/>
+    <group ns="robot7">
+		<include file="$(find robot_controller)/launch/default_mapping_robot7.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot7.launch"/>  
+	</group>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/xxx/catkin_ws_robots/devel
+
+Name: hector_mapstitch
+Description: Description of hector_mapstitch
+Version: 0.0.0
+Cflags: -I/home/xxx/catkin_ws_robots/src/hector_mapstitch/include
+Libs: -L/home/xxx/catkin_ws_robots/devel/lib -lhector_mapstitch
+Requires: cv_bridge rosconsole roscpp tf

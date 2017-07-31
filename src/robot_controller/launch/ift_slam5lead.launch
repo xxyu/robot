@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="ground_2_map_5" args="0 0 -0.5 0 0 0 ground robot5/map 200"/> <!-- change rate from 100ms to 200ms, 2017-01-04, WT -->
+    <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_5" args="0 0 0 3.142 0 0 robot5/base_link robot5/laser 200"/> <!-- change rate from 100ms to 200ms, 2017-01-04, WT -->
+    <group ns="robot5">
+		<include file="$(find robot_controller)/launch/default_mapping_robot5.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot5.launch"/>  
+	</group>
+</launch>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<launch>
+<!--
+	<node pkg="hector_mapstitch" type="ros_mapstitch" name="mapstitcher3_7">
+		<remap from="world" to="/robot3/map" />
+        <remap from="align" to="/robot7/map" />
+        <remap from="map" to="map3_7" />
+	</node>
+    
+	<node pkg="hector_mapstitch" type="ros_mapstitch" name="mapstitcher3_4">
+		<remap from="world" to="/robot3/map" />
+        <remap from="align" to="/robot4/map" />
+        <remap from="map" to="map3_4" />
+	</node>
+-->
+    
+	<node pkg="hector_mapstitch" type="ros_mapstitch" name="mapstitcher5_7">
+		<remap from="world" to="/robot5/map" />
+        <remap from="align" to="/robot7/map" />
+        <remap from="map" to="map5_7" />
+	</node>
+    
+	<node pkg="hector_mapstitch" type="ros_mapstitch" name="mapstitcher5_4">
+		<remap from="world" to="/robot5/map" />
+        <remap from="align" to="/robot4/map" />
+        <remap from="map" to="map5_4" />
+	</node>
+    
+	<node pkg="hector_mapstitch" type="ros_mapstitch" name="mapstitcher5_3">
+		<remap from="world" to="/robot5/map" />
+        <remap from="align" to="/robot3/map" />
+        <remap from="map" to="map5_3" />
+	</node>
+</launch>

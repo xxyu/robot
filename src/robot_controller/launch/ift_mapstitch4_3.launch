@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="hector_mapstitch" type="ros_mapstitch" name="mapstitcher4_3" output="screen">
+		<remap from="world" to="robot4/map" />
+        <remap from="align" to="robot3/map" />
+        <remap from="map" to="map4_3" />
+	</node>
+</launch>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">
+		<param name="pub_map_odom_transform" value="true"/>
+		<param name="map_frame" value="robot7/map"/> 
+		<param name="base_frame" value="robot7/base_link"/> 
+		<param name="odom_frame" value="robot7/odom"/> <!-- 2016-09-28, WT. For frame, it is better not put '/' before the tag -->
+
+		<param name="use_tf_scan_transformation" value="true"/>
+		<param name="use_tf_pose_start_estimate" value="false"/>
+
+		<param name="map_resolution" value="0.05"/> <!-- 0.025, 2016-12-22, WT. Original: 0.03; change to 0.05 2017-01-03, WT -->
+		<param name="map_size" value="512"/> <!-- 2048, 2017-01-03, WT. Original: 512 -->
+		<param name="map_start_x" value="0.5"/>
+		<param name="map_start_y" value="0.5" />
+		<param name="map_pub_period" value="1.0" /> <!-- 2016-12-22, WT. Original: 1.0 -->
+		<param name="map_multi_res_levels" value="2" /> <!-- 2016-09-28, WT. Default 3 -->
+
+		<param name="update_factor_free" value="0.4"/>
+		<param name="update_factor_occupied" value="0.9" /> <!-- 0.7, Someone says the default is 0.9 2016-12-21, WT-->   
+		<param name="map_update_distance_thresh" value="0.4"/> <!-- 2016-12-22, WT. Original: 0.2 -->
+		<param name="map_update_angle_thresh" value="0.06" /> <!-- 0.7 to 0.9, as in the new 'hector_mapping/launch/mapping_default.launch 2016-10-01 WT-->
+		<param name="laser_min_dist" value="0.15" />  <!--Added 2016-12-21, WT-->
+		<param name="laser_max_dist" value="6" /> <!-- Default: 6, 2016-12-21, WT-->
+		<param name="laser_z_min_value" value = "-1.0" />
+		<param name="laser_z_max_value" value = "1.0" />
+
+		<param name="advertise_map_service" value="true"/>
+		<param name="scan_subscriber_queue_size" value="5"/>
+		<param name="scan_topic" value="/robot7/scan"/> <!-- 2016-09-28, WT. There must be a '/' before robot4, or it will not work; though it is in ns of robot4, it can't get tag automatically. -->
+		<param name="tf_map_scanmatch_transform_frame_name" value="robot7/scanmatcher_frame" />
+	</node>
+</launch>

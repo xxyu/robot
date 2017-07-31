@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+ 
+<launch>
+	<group ns="robot7">
+		<node pkg="xv_11_laser_driver" type="neato_laser_publisher" name="xv_11_node_7">
+			<!--<param name="port" value="/dev/tty.usbserial-A9UXLBBR"/>-->
+			<param name="port" value="/dev/ttyACM0"/>
+			<param name="firmware_version" value="2"/>
+			<param name="frame_id" value="robot7/laser"/>
+			<param name="robot_name" value="robot7" />
+		</node>
+	  
+		<!-- 
+		<node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser" args="0 0 0 3.1415 0 0 /base_frame /laser 100"/> 
+		<include file="$(find robot_controller)/launch/default_mapping.launch"/> 
+		<include file="$(find hector_geotiff)/launch/geotiff_mapper.launch"/>  
+		-->
+		
+		<node pkg="robot_controller" type="base_driverUSB" name="robot_base_driverUSB_node_7" output="screen">
+			<param name="robot_name" value="robot7" />
+			<param name="ini_pos" value="1.0 -1.0 1"/>
+		</node>
+		
+		<node pkg="robot_controller" type="arm_driverUSB" name="robot_arm_driverUSB_node_7" output="screen">
+			<param name="port_name" value="/dev/ttyACM1"/>
+			<param name="robot_name" value="robot7" />
+		</node>
+	</group>
+</launch>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch> 
+        <param name="/use_sim_time" value="true"/>
+    	<!-- The configuration file is under ~/.ros -->
+	<node pkg="rviz" type="rviz" name="rviz" args="-d rviz_cfg_3.rviz" />
+</launch>

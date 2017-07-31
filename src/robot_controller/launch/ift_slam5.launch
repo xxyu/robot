@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="base_frame_2_laser_5" args="0 0 0 3.142 0 0 robot5/base_link robot5/laser 200"/>
+    <group ns="robot5">
+		<include file="$(find robot_controller)/launch/default_mapping_robot5.launch"/> 
+		<include file="$(find robot_controller)/launch/geotiff_mapper_robot5.launch"/>  
+	</group>
+</launch>
